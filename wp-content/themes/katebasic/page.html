@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+  
+ <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" >
+ <link rel="stylesheet"  href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <link rel="stylesheet" type="text/css" href="css/flexslider.css" media="screen" />
+ <link rel="stylesheet" type="text/css" href="css/katebasic.css" />
+
+<title>KATE BASIC-WIDE TEMPLATE</title>
+</head>
+
+<body>
+<!-- Start Containter -->
+<div id="container">
+    
+<!-- Start Header -->  
+<script>
+$(function() { // Open and close responsive nav //
+		$( "#nav-button" ).click(function(){
+				$(".main-nav").slideToggle(600, "swing");
+		});
+	
+		$( "#close" ).click(function(){
+				$(".main-nav").slideUp(600, "swing");
+		});	
+});	
+</script>
+
+<header>
+        <div class="site-width">
+                <div id="title-wrapper">
+                        <div id="logo"> <h1>KATE LEE</h1> </div>
+                        <div id="banner"> <h2>Banner</h2></div>
+                </div>
+                <nav>
+                        <div id="nav-button"><a href="#"><i class="fa fa-bars"></i></a></div>
+                        <ul id="main-menu" class="main-nav">
+                                <li id="close"><a><i class="fa fa-times"></i></a></li>
+                                <li><a href="home.html">Home</a></li>
+                                <li><a href="page.html">About</a></li>
+                                <li><a href="page.html">Portfolio</a>
+                                        <ul  id="page.html" class="sub-nav">
+                                                <li><a href="page.html">Logos</a></li>
+                                                <li><a href="page.html">Print</a></li>
+                                                <li><a href="page.html">Websites</a></li>
+                                        </ul>
+                                 </li>
+                                <li><a href="page.html">Blog</a></li>
+                                <li><a href="page.html">Contact</a></li>
+                        </ul>
+                </nav>
+        </div>
+</header>
+<!-- End Header -->
+    
+<!-- Start Contetns -->
+<div id="contents">
+		<div class="site-width full-height">   
+        		<div class="col-100">
+            
+            
+                <!-- Start Aside -->
+                <aside class="col-25 full-height">
+                		<ul  id="submenu1" class="side-nav">
+                                <li><a href="#">Logos</a></li>
+                                <li><a href="#">Print</a></li>
+                                <li><a href="#">Websites</a></li>
+                        </ul>
+                </aside>
+                <!-- End Aside-->
+            
+            
+                <!-- Start Article -->
+                <article class="col-75">
+                		<div class="inner">
+              					<h1>PAGE</h1>
+                                <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+                                
+                                <h2>Header Level 2</h2>
+                                           
+                                <ol>
+                                       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                                       <li>Aliquam tincidunt mauris eu risus.</li>
+                                </ol>
+                                
+                                <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+                                
+                                <h3>Header Level 3</h3>
+                                
+                                <ul>
+                                       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                                       <li>Aliquam tincidunt mauris eu risus.</li>
+                                </ul>
+                                
+                                <pre><code>
+                                #header h1 a { 
+                                    display: block; 
+                                    width: 300px; 
+                                    height: 80px; 
+                                }
+                                </code></pre>          
+                		</div>
+                </article>
+                <!-- End Article -->
+        		
+                
+                </div>
+		</div>
+</div>
+<!-- End Contetns -->
+    
+    
+    <!-- Start Clear Float -->
+    <div class="clearfloat"></div>
+    <!-- End Clear Float-->
+    
+    
+    <!-- Start Footer -->
+    <footer>
+        <div class="site-width">
+        	<div id="footer-text">
+        		<p><a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">Valid CSS</a> and <a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML5</a> | Copyright &copy; 2015 Kate Lee. All rights reserved. </p>
+        	</div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+
+</div>
+<!-- End Contatiner -->
+
+
+<script defer src="js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(function(){
+  SyntaxHighlighter.all();
+});
+$(window).load(function(){
+  $('.flexslider').flexslider({
+    animation: "slide",
+    start: function(slider){
+      $('body').removeClass('loading');
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>
