@@ -11,30 +11,26 @@
  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url');?>" />
 
 <title><?php bloginfo('description');?> | <?php bloginfo('name');?> </title>
+
+<!--Start WP Head -->
+<?php wp_head(); ?>
+<!-- End WP Head -->
+
+
 </head>
 
 <body <?php body_class(); ?>>
 
 <!-- Start Containter -->
 <div id="container">
-    
-<!-- Start Header -->
-<script>
-$(function() { // Open and close responsive nav //
-		$( "#nav-button" ).click(function(){
-				$(".main-nav").slideToggle(600, "swing");
-		});
-	
-		$( "#close" ).click(function(){
-				$(".main-nav").slideUp(600, "swing");
-		});	
-});	
-</script>
 
+    
+
+<!-- Start Header -->
 <header>
         <div class="site-width">
                 <div id="title-wrapper">
-                    <div id="logo"> <a href="../wordpress"><h1>KATE LEE</h1> </a></div>
+                    <div id="logo"> <a href="../wordpress "><h1>KATE LEE</h1> </a></div>
                         <div id="banner"> <h2>Banner</h2></div>
                 </div>
                 <nav>
@@ -63,29 +59,15 @@ $(function() { // Open and close responsive nav //
     
 <!-- Start Contetns -->
 <div id="contents">
-    <div class="site-width full-height">
-        
-            <!-- Start Flexslider -->
-            <div class="flexslider">
-              <ul class="slides">
-                <li data-thumb="<?php bloginfo('template_directory');?>/images/slider1.png">
-                  <img src="<?php bloginfo('template_directory');?>/images/slider1.png" alt="slider1" />
-                </li>
-                <li data-thumb="<?php bloginfo('template_directory');?>/images/slider2.png">
-                  <img src="<?php bloginfo('template_directory');?>/images/slider2.png" alt="slider2"/>
-                </li>
-                <li data-thumb="<?php bloginfo('template_directory');?>/images/slider3.png">
-                  <img src="<?php bloginfo('template_directory');?>/images/slider3.png" alt="slider3"/>
-                </li>
-                <li data-thumb="<?php bloginfo('template_directory');?>/images/slider4.png">
-                  <img src="<?php bloginfo('template_directory');?>/images/slider4.png" alt="slider4" />
-                </li>
-                <li data-thumb="<?php bloginfo('template_directory');?>/images/slider5.png">
-                  <img src="<?php bloginfo('template_directory');?>/images/slider5.png" alt="slider5" />
-                </li>
-              </ul>
-            </div>
-            <!-- End Flexslider -->
+    <div class="site-width full-height">        
+            
+            <div class="col-100"><div class="inner">
+                <?php if (have_posts()) : while(have_posts()) : the_post(); ?> 
+                <h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
+                <?php the_content('')?>
+                <?php endwhile; endif; ?>
+            </div></div>
+                
             
             <!-- Start Colomn Home -->
             <div class="col-100">
@@ -93,7 +75,8 @@ $(function() { // Open and close responsive nav //
                 <!-- Start Column 1 -->
                 <div class="col-33"><div class="inner">
                     <h1>LOOP 1</h1>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>               
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                    
                 </div></div>
                 <!-- End Column 1-->
                 
@@ -129,19 +112,21 @@ $(function() { // Open and close responsive nav //
 <footer>
         <div class="site-width">
                 <div id="footer-text">
-                    	<p><a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">Valid CSS</a> and <a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML5</a> | Copyright &copy; 2015 Kate Lee. All rights reserved. </p>
+                    	<p><a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">Valid CSS</a> and <a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML5</a> | Copyright &copy; 2015 Kate Lee. All rights reserved. <?php wp_loginout(); ?></p>
                 </div>
         </div>
 </footer>
 <!-- End Footer -->
-
-
+    
+    
 </div>
 <!-- End Contatiner -->
 
-
+    
 <script defer src="<?php bloginfo('template_directory');?>/js/jquery.flexslider.js"></script>
 
+    
+<!-- Start Script for FlexSlider -->
 <script type="text/javascript">
 $(function(){
   SyntaxHighlighter.all();
@@ -155,7 +140,26 @@ $(window).load(function(){
   });
 });
 </script>
+<!-- End Script for FlexSlider -->
 
-
+    
+<!-- Start Script for navigation button -->
+<script>
+$(function() { // Open and close responsive nav //
+		$( "#nav-button" ).click(function(){
+				$(".main-nav").slideToggle(600, "swing");
+		});
+	
+		$( "#close" ).click(function(){
+				$(".main-nav").slideUp(600, "swing");
+		});	
+});	
+</script>
+<!-- End Script for navigation button -->
+    
+<!-- Start WP_footer -->
+<?php wp_footer();?>
+<!-- End WP_footer-->
+    
 </body>
 </html>
