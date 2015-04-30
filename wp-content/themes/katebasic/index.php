@@ -61,43 +61,35 @@
 <div id="contents">
     <div class="site-width full-height">        
             
-            <div class="col-100"><div class="inner">
-                <?php if (have_posts()) : while(have_posts()) : the_post(); ?> 
-                <h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
-                <?php the_content('')?>
-                <?php endwhile; endif; ?>
-            </div></div>
-                
-            
-            <!-- Start Colomn Home -->
-            <div class="col-100">
-                
-                <!-- Start Column 1 -->
-                <div class="col-33"><div class="inner">
-                    <h1>LOOP 1</h1>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                    
-                </div></div>
-                <!-- End Column 1-->
-                
-                <!-- Start Column 2 -->
-                <div class="col-33"><div class="inner">
-                    <h1>LOOP 2</h1>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>              
-                </div></div>
-                <!-- End Column 2 -->
-                
-                <!-- Start Column 3 -->
-                <div class="col-33"><div class="inner">
-                    <h1>LOOP 3</h1>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>              
-                </div></div>
-                <!-- End Column 3-->
-           
-            
+        <div class="col-100">
+
+
+            <!-- Start Aside -->
+            <aside class="col-25 full-height">
+                <ul  id="submenu1" class="side-nav">
+                    <li><a href="#">Logos</a></li>
+                    <li><a href="#">Print</a></li>
+                    <li><a href="#">Websites</a></li>
+                </ul>
+            </aside>
+            <!-- End Aside-->
+
+
+            <!-- Start Article -->
+            <article class="col-75">
+                <div class="inner">
+                    <?php if (have_posts()) : while(have_posts()) : the_post(); ?> 
+                    <h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
+                    <?php the_content('')?>
+                    <?php endwhile; endif; ?>
+                </div>
+            </article>
+            <!-- End Article -->
+
+
         </div>
-        <!-- End Column -->
-        
+                
+           
     </div>    
 </div>
 <!-- End Contetns -->
