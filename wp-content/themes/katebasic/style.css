@@ -148,7 +148,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-weight:300;
+    font-weight:400;
 	margin-bottom: .5em;
 }
 
@@ -161,7 +161,7 @@ p {
 
 a {  /* unvisited link */
     color: #E45F56;
-	font-weight:600;
+	font-weight:400;
 	text-decoration:none;
 }
 
@@ -177,16 +177,10 @@ a:active { /* selected link */
     text-decoration: none;
 }
 
-ul {
+ul, ol {
     list-style-position: inside;
-	margin-bottom: .5em;
+    margin-bottom: 0.5em;
 } 
-
-ol {
-    list-style-position: inside;
-	margin-bottom: .5em;
-} 
-
 
 
 .site-width{
@@ -245,6 +239,9 @@ ol {
 	overflow:hidden;
 }
 
+article .inner{
+    border-right:1px dashed #999; 
+}
 
 /* ================================ HEADER ================================ */
 
@@ -255,18 +252,24 @@ header {
 		#title-wrapper{
 			/*position:relative;*/
 			overflow:auto;
+            padding:1em;
 		}
 		#logo{
 			float:left;
 			vertical-align: bottom;
-			margin:  0.9em 1.8em;
 		}
+        #logo h1{
+            margin: 0;
+            font-size: 2.4em;
+            font-weight: 300;
+        }
 		#banner{
 			float:right;
 			vertical-align: bottom;
-			color:#E45F56;
-			margin:0.9em 1.8em;
 		}
+        #banner h2{
+            margin: 0;    
+        }
 
 
 /* ================================ CONTENTS ================================ */
@@ -321,12 +324,12 @@ footer {
 /*
 <nav>
 		<div id="nav-button"><a href="#"><i class="fa fa-bars"></i></a></div>
-		<ul id="main-menu" class="main-nav">
+		<ul id="main-nav" class="main-menu">
 				<li id="close"><a><i class="fa fa-times"></i></a></li>
 				<li><a href="#">Home</a></li>
 				<li><a href="#">About</a></li>
 				<li><a href="#">Portfolio</a>
-						<ul  id="submenu1" class="sub-nav">
+						<ul  id="submenu1" class="sub-menu">
 								<li><a href="#">Logos</a></li>
 								<li><a href="#">Print</a></li>
 								<li><a href="#">Websites</a></li>
@@ -339,77 +342,103 @@ footer {
 */
 
 #nav-button{
-		display: none;		
-		padding: 0.9em 1.8em;
-		text-align:right;
-		border-top: 1px dashed #999;
+    display: none;		
+    padding: 0.9em 1.8em;
+    text-align:right;
+    border-top: 1px dashed #999;
 }
 		
-.main-nav{
-		clear:both;
-		margin:0;
-		z-index:100000;
-		background-color:#ffffff;
-		display:block;
-		border-top: 1px dashed #999;
+.main-menu{
+    clear:both;
+    margin:0;
+    z-index:100000;
+    background-color:#ffffff;
+    display:block;
+    border-top: 1px dashed #999;
 }
 
-.main-nav > li {
-		list-style:none;
-		display: block;    
-		margin: 0;
-		float:left;
-		width: 20%; /*Change this size depends on the number of main menus.*/
-		/*li can have border because of width percentage */
-		text-align:center;
+.main-menu > li {
+    list-style:none;
+    display: block;    
+    margin: 0;
+    float:left;
+    width: 25%; /*Change this size depends on the number of main menus.*/
+    /*li can have border because of width percentage */
+    text-align:center;
 }
 
-.main-nav > li > a{
-		display:block;
-		padding: 0.9em 1.8em;
-		border-right:1px dashed #999;
+.main-menu > li:hover > a{
+    background-color: #eee;
 }
 
-.main-nav li:last-of-type a{
-    	border-right: none;
+.main-menu > li > a{
+    display:block;
+    padding: 0.9em 1.8em;
+    border-right:1px dashed #999;
 }
 
-.main-nav li.current a{
-		color:#2B496B;
-		font-style: italic;
+.main-menu > li:last-of-type > a{
+    border-right: none;
 }
 
 #close{ /* hides the close button if there is a close button nested in the first item of the list. */
-		display:none;
-		text-align:right;
+    display:none;
+    text-align:right;
 }
 
-.sub-nav{
-		display:none;
+/* ============================= NAVIGATION (Sub Dropdown-nav) ============================= */
+
+.sub-menu{
+    display:none;
+    margin: 0;
 }
+
+.sub-menu > li > a {
+    font-size: 0.9em;
+    padding: 0.8em 0.8em 0.8em 2.7em ;
+}
+
 
 /* ============================= NAVIGATION (Sub side-nav) ============================= */
-.side-nav {
-		display:block;
-		width: 100%;
-		border-right:1px dashed #999;
-		padding-bottom: 1500px;
-		margin-bottom: -1500px;
+.side-nav-title{
+    margin: 0;
+    text-align: center;
 }
-.side-nav li {
-		list-style:none;
-		float:none;
-		width: 100%; /*list width is inherited from .main-nav ul*/
-		text-align:left;
+.side-menu {
+    display:block;
+    width: 100%;
+    border-top:1px dashed #999;
+}
+.side-menu li {
+    list-style:none;
+    float:none;
+    width: 100%; /*list width is inherited from .main-menu ul*/
+    text-align:left;
 }
 				
-.side-nav > li > a {
-		display:block;
-		padding: 0.9em 1.8em;
-		border-right:none;
-		border-bottom:1px dashed #999;
+.side-menu > li > a {
+    display:block;
+    padding: 0.9em 1.8em;
+    border-right:none;
+    border-bottom:1px dashed #999;
 }
-	
+
+.side-menu > li:hover > a{
+    background-color: #eee;
+}
+
+/* ========================= NAVIGATION (Only Current status) ========================= */
+
+.current-menu-item .sub-menu li a{
+    background-color: #fff;
+    color: #E45F56;
+}
+
+.current-menu-item a, .current_page_item a, .current-cat a{
+    background-color: #eee;
+    color: #2B496B;
+}
+
 
 /* ======================= OTHER GRAPHIC ELEMENT STYLES ======================= */
 
@@ -422,7 +451,7 @@ img.me {
 
 
 /* ===================================================================================================== */	
-/*                                                                          RESPONSIVE BREAK POINTS AND STYLES                                                                          */
+/*                                   RESPONSIVE BREAK POINTS AND STYLES                                  */
 /* ===================================================================================================== */	
 
 
@@ -436,105 +465,100 @@ img.me {
 /* ================================== Small Desktop  ( ~ 1024px )================================== */ 
 @media all and (max-width:1024px) {
 	
-		/* ================ Header & Responsive Nav Style ================ */ 
+    /* ================ Header & Responsive Nav Style ================ */ 
 				
-				#logo{
-					float:none;
-				}
-				
-				#banner{
-					float:none;
-				}
-	
-				#nav-button{
-						display:block;
-						position: absolute;
-						top:0;
-						right:0;
-						border:none;
-				}
-				
-				.main-nav{
-						display:none;
-						position:absolute;
-						right:0;
-						top:0;
-						border-top: none;
-						border-right: 1px dashed #999;
-						border-left: 1px dashed #999;
-						width:33.3333%;
-						min-width:200px;
-						height:100%;
-						padding-top: 3em;
-				}
-				
-				.main-nav > li, .sub-nav > li{
-						list-style:none;
-						float:none;
-						width: 100%; /*list width is inherited from .main-nav ul*/
-						text-align:left;
-				}
-				
-				.main-nav > li > a, .sub-nav > li > a {
-						display:block;
-						padding: 0.9em 1.8em;
-						border-right:none;
-						border-bottom:1px dashed #999;
-				}
-				
-				.sub-nav > li > a {
-						padding-left: 2.7em;
-				}
-				
-				#close{ /* hides the close button if there is a close button nested in the first item of the list. */
-						display:block;
-						text-align:right;
-				}
-				
-				.sub-nav{
-						display:block;
-				}
-		
-		/* ================ End Responsive Nav Style ================ */ 
-   
+        #logo{
+            float:none;
+        }
+
+        #banner{
+            float:none;
+        }
+
+        #nav-button{
+            display:block;
+            position: absolute;
+            top:0;
+            right:0;
+            border:none;
+        }
+
+        .main-menu{
+            display:none;
+            position:absolute;
+            right:0;
+            top:0;
+            border-top: none;
+            border-right: 1px dashed #999;
+            border-left: 1px dashed #999;
+            width:33.3333%;
+            min-width:200px;
+            height:100%;
+            padding-top: 3em;
+        }
+
+        .main-menu > li, .sub-menu > li{
+            list-style:none;
+            float:none;
+            width: 100%; /*list width is inherited from .main-menu ul*/
+            text-align:left;
+        }
+
+        .main-menu > li > a, .sub-menu > li > a {
+            display:block;
+            border-right:none;
+            border-bottom:1px dashed #999;
+        }
+
+        
+
+        #close{ /* hides the close button if there is a close button nested in the first item of the list. */
+            display:block;
+            text-align:right;
+        }
+
+        .sub-menu{
+            display:block;
+        }
+
+/* ================ End Responsive Nav Style ================ */ 
+
 } 
 
 
 /* ================================Table Portrait and Phone Layout=============================== */ 
 @media all and (max-width:768px) {
 
+    /*Ignore every column width and convert it to 100 */
+    .col-25, .col-33, .col-66, .col-75 { 
+        width:100%;
+    }
 
-/*Ignore every column width and convert it to 100 */
-.col-25, .col-33, .col-66, .col-75 { 
-		width:100%;
-}
-
-.side-nav{
-	display:none;
+    .side-menu{
+        display:none;
+    }
 }
 
 /* ================Phone Layout ================*/ 
 @media all and (max-width:640px) {
-.logo{
-	height:auto;
-}
+    .logo{
+        height:auto;
+    }
 
-#title{
-	clear:both;
-	width:100%;
-	position:relative;
-	text-align: center;
-}
+    #title{
+        clear:both;
+        width:100%;
+        position:relative;
+        text-align: center;
+    }
 
-#sub-title {
-	clear:both;
-	margin-top:0px;
-	width:100%;
-	position:relative;
-	text-align: center;
-}
-
-
+    #sub-title {
+        clear:both;
+        margin-top:0px;
+        width:100%;
+        position:relative;
+        text-align: center;
+    }
 }
 
 
