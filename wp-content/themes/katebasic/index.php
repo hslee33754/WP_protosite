@@ -7,7 +7,9 @@
 <script src="<?php bloginfo('template_directory');?>/js/jquery.flexslider.js"></script>
   
  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" >
+ <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' >
  <link rel="stylesheet"  href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <link rel="icon" type="image/ico" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/css/flexslider.css" media="screen" />
  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url');?>" />
 
@@ -80,56 +82,60 @@
     <div class="site-width full-height">        
         <div class="col-100">
             
-<!-- Start Article -->
-<article class="col-75">
-    <div class="inner full-height">
-        <?php if (have_posts()) : while(have_posts()) : the_post(); ?> 
-        <h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
-        <?php the_content('')?>
-        <?php endwhile; endif; ?>
-    </div>
-</article>
-<!-- End Article -->
-            
-<!-- Start Aside -->
-<aside class="col-25">
-    <div class="inner">
-        <h3 class="side-nav-title"><?php echo get_the_title($post->post_parent) ?></h3>
-    </div><!-- End inner div --> 
-    <!-- Start Sub Nav -->
-    <?php if(is_page()) :?>
-        <ul  id="side-nav" class="side-menu">
-            <!-- Start sub list
-            <li><a href="#">Logos</a></li>
-            <li><a href="#">Print</a></li>
-            <li><a href="#">Websites</a></li>
-            -->
-            <?php 
-            if($post->post_parent){
-                wp_list_pages(array(
-                    'title_li' => __(''),
-                    'child_of' => $post->post_parent,
-                ));
-            }else{
-                wp_list_pages(array(
-                    'title_li' => __(''),
-                    'child_of' => $post->ID,
-                ));
-            } ?>
-        </ul>
-    <?php else : ?>
-        <ul class="side-menu">
-        <?php wp_list_categories(array(
-            'title_li' => __('')
-        ))?>
-        </ul>
-    <?php endif; ?>
-    <!-- End Sub Nav -->
-    
-    <div class="inner">
-    </div><!-- End inner div --> 
-</aside>
-<!-- End Aside-->
+    <!-- Start Article -->
+    <article class="col-75">
+        <div class="inner full-height">
+            <?php if (have_posts()) : while(have_posts()) : the_post(); ?> 
+            <h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
+            <?php the_content('')?>
+            <?php endwhile; endif; ?>
+        </div>
+    </article>
+    <!-- End Article -->
+
+    <!-- Start Aside -->
+    <aside class="col-25">
+        
+        <div class="inner pageid">
+            <small>You're at...</small>
+            <br><br>
+            <h3 class="side-nav-title">
+                <?php echo get_the_title( $post->post_parent ); ?>
+            </h3>
+        </div><!-- End inner div --> 
+        
+        <!-- Start Sub Nav -->
+        <?php if(is_page()) :?>
+            <ul  id="side-nav" class="side-menu">
+                <?php 
+                if($post->post_parent){
+                    wp_list_pages(array(
+                        'title_li' => __(''),
+                        'child_of' => $post->post_parent,
+                    ));
+                }else{
+                    wp_list_pages(array(
+                        'title_li' => __(''),
+                        'child_of' => $post->ID,
+                    ));
+                } ?>
+            </ul>
+        <?php else : ?>
+            <ul class="side-menu">
+            <?php wp_list_categories(array(
+                'title_li' => __('')
+            ))?>
+            </ul>
+        <?php endif; ?>
+        <!-- End Sub Nav -->
+
+        <!-- Start inner div --> 
+        <div class="inner">
+        </div>
+        <!-- End inner div --> 
+        
+    </aside>
+    <!-- End Aside-->
 
         </div> <!-- End Columns -->
     </div><!-- End Site Width -->   

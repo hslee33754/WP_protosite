@@ -161,7 +161,7 @@ p {
 
 a {  /* unvisited link */
     color: #E45F56;
-	font-weight:400;
+	font-weight:500;
 	text-decoration:none;
 }
 
@@ -170,7 +170,8 @@ a:visited {  /* visited link */
 }
 
 a:hover { /* mouse over link */
-    color: #2B496B;
+    /*color: #2B496B;*/
+    color: #999;
 }
 
 a:active { /* selected link */
@@ -182,6 +183,15 @@ ul, ol {
     margin-bottom: 0.5em;
 } 
 
+::-moz-selection { 
+background-color: #E45F56; 
+color: #ffffff;
+}
+
+::selection {
+background-color: #E45F56;
+color: #ffffff;
+}
 
 .site-width{
 	max-width: 1024px;
@@ -249,27 +259,27 @@ header {
     background:#fff;
     border-bottom:1px dashed #999; 
 }
-		#title-wrapper{
-			/*position:relative;*/
-			overflow:auto;
-            padding:1em;
-		}
-		#logo{
-			float:left;
-			vertical-align: bottom;
-		}
-        #logo h1{
-            margin: 0;
-            font-size: 2.4em;
-            font-weight: 300;
-        }
-		#banner{
-			float:right;
-			vertical-align: bottom;
-		}
-        #banner h2{
-            margin: 0;    
-        }
+    #title-wrapper{
+        /*position:relative;*/
+        overflow:auto;
+        padding:1em;
+    }
+    #logo{
+        float:left;
+        vertical-align: bottom;
+    }
+    #logo h1{
+        margin: 0;
+        font-size: 2.4em;
+        font-weight: 300;
+    }
+    #banner{
+        float:right;
+        vertical-align: bottom;
+    }
+    #banner h2{
+        margin: 0;    
+    }
 
 
 /* ================================ CONTENTS ================================ */
@@ -301,11 +311,11 @@ footer {
     letter-spacing:.20em;
 }
 		
-		#footer-text{
-			margin: 0 auto;
-			padding:1em;
-			text-align:center;
-		}
+    #footer-text{
+        margin: 0 auto;
+        padding:1em;
+        text-align:center;
+    }
 
 
 /* ================================ FLEXSLIDER  ================================ */
@@ -368,7 +378,9 @@ footer {
 }
 
 .main-menu > li:hover > a{
-    background-color: #eee;
+    background-color: #999;
+    color:#fff;
+    font-family: 'Nothing You Could Do', cursive;
 }
 
 .main-menu > li > a{
@@ -398,6 +410,12 @@ footer {
     padding: 0.8em 0.8em 0.8em 2.7em ;
 }
 
+.sub-menu > li:hover > a {
+    background-color: #999;
+    color:#fff;
+    font-family: 'Nothing You Could Do', cursive;
+}
+
 
 /* ============================= NAVIGATION (Sub side-nav) ============================= */
 .side-nav-title{
@@ -424,19 +442,17 @@ footer {
 }
 
 .side-menu > li:hover > a{
-    background-color: #eee;
+    background-color: #999;
+    color:#fff;
+    font-family: 'Nothing You Could Do', cursive;
 }
 
 /* ========================= NAVIGATION (Only Current status) ========================= */
 
-.current-menu-item .sub-menu li a{
-    background-color: #fff;
-    color: #E45F56;
-}
-
 .current-menu-item a, .current_page_item a, .current-cat a{
     background-color: #eee;
-    color: #2B496B;
+    color: #333;
+    font-family: 'Nothing You Could Do', cursive;
 }
 
 
@@ -448,7 +464,11 @@ img.me {
     padding: 0 20px 10px 0;
 }
 
-
+.pageid {
+    background-color: #E45F56;
+    color: #fff;
+    font-family: 'Nothing You Could Do', cursive;
+}
 
 /* ===================================================================================================== */	
 /*                                   RESPONSIVE BREAK POINTS AND STYLES                                  */
@@ -534,6 +554,9 @@ img.me {
         width:100%;
     }
 
+    .pageid{
+        display:none;
+    }
     .side-menu{
         display:none;
     }
