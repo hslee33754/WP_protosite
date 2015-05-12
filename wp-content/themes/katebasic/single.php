@@ -4,10 +4,11 @@
 <article class="col-75">
     <div class="inner full-height">
         <?php if (have_posts()) : while(have_posts()) : the_post(); ?> 
-        <h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
+        <h1><?php the_title();?></h1>
+        <small>By line goes here</small>
         <?php the_content('')?>
         <?php endwhile; endif; ?>
-        <small>index.php</small>
+        <small>single.php</small>
     </div>
 </article>
 <!-- End Article -->

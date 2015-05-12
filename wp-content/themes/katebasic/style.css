@@ -240,18 +240,18 @@ color: #ffffff;
 }
 
 
-/* ================================ CONTARINER ================================ */
+/* =============================== CONTARINER ================================ */
 
 #container{ 
-	/*div class container keeps all the contents in and make the footer stay at the bottom. */
+	/* div class container keeps all the contents in it and 
+     * make the footer stay at the bottom. 
+     */
 	min-height:100%;
 	position:relative;
 	overflow:hidden;
 }
 
-article .inner{
-    border-right:1px dashed #999; 
-}
+
 
 /* ================================ HEADER ================================ */
 
@@ -281,13 +281,21 @@ header {
         margin: 0;    
     }
 
-
-/* ================================ CONTENTS ================================ */
+/* ================== CONTENTS and other structural elemets in it ================= */
 
 #contents{
 	width:100%;
 }
 
+article .inner{
+    border-right:1px dashed #999; 
+}
+
+.pageid {
+    background-color: #E45F56;
+    color: #fff;
+    font-family: 'Nothing You Could Do', cursive;
+}
 
 /* =============================== CLEARFLOAT =============================== */
 
@@ -318,7 +326,7 @@ footer {
     }
 
 
-/* ================================ FLEXSLIDER  ================================ */
+/* ======================== FLEXSLIDER Additional Styles ======================== */
 
 .flexslider{
 	margin-top:0;
@@ -333,21 +341,21 @@ footer {
 
 /*
 <nav>
-		<div id="nav-button"><a href="#"><i class="fa fa-bars"></i></a></div>
-		<ul id="main-nav" class="main-menu">
-				<li id="close"><a><i class="fa fa-times"></i></a></li>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Portfolio</a>
-						<ul  id="submenu1" class="sub-menu">
-								<li><a href="#">Logos</a></li>
-								<li><a href="#">Print</a></li>
-								<li><a href="#">Websites</a></li>
-						</ul>
-				 </li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Contact</a></li>
-		</ul>
+    <div id="nav-button"><a href="#"><i class="fa fa-bars"></i></a></div>
+    <ul id="main-nav" class="main-menu">
+        <li id="close"><a><i class="fa fa-times"></i></a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a>
+            <ul  id="submenu1" class="sub-menu">
+                <li><a href="#">Logos</a></li>
+                <li><a href="#">Print</a></li>
+                <li><a href="#">Websites</a></li>
+        </ul>
+         </li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
 </nav>
 */
 
@@ -464,10 +472,9 @@ img.me {
     padding: 0 20px 10px 0;
 }
 
-.pageid {
-    background-color: #E45F56;
-    color: #fff;
-    font-family: 'Nothing You Could Do', cursive;
+.full-width{
+    width:100%;
+    height:auto;
 }
 
 /* ===================================================================================================== */	
@@ -475,9 +482,9 @@ img.me {
 /* ===================================================================================================== */	
 
 
-/* ============================== Large Dektop  ( 1024px ~ unlimited ) =============================== */
+/* ================================= Large Dektop  ( 1025px ~  ) ================================== */
 
-@media all and (min-width:1101px) {
+@media all and (min-width:1025px) {
 
 } 
 
@@ -494,7 +501,8 @@ img.me {
         #banner{
             float:none;
         }
-
+        
+        /* hides the main-menu and display a clickale button to show the dropdown nav */
         #nav-button{
             display:block;
             position: absolute;
@@ -502,7 +510,8 @@ img.me {
             right:0;
             border:none;
         }
-
+        
+        /* hides the main-menu and change the style to dropdown menu */
         .main-menu{
             display:none;
             position:absolute;
@@ -530,11 +539,8 @@ img.me {
             border-bottom:1px dashed #999;
         }
 
-        
-
-        #close{ /* hides the close button if there is a close button nested in the first item of the list. */
+        #close{ /* display close button when it is a dropdown style. */
             display:block;
-            text-align:right;
         }
 
         .sub-menu{
@@ -546,7 +552,7 @@ img.me {
 } 
 
 
-/* ================================Table Portrait and Phone Layout=============================== */ 
+/* ============================Table Portrait and Phone Layout ( 641px ~ 768 px )=========================== */ 
 @media all and (max-width:768px) {
 
     /*Ignore every column width and convert it to 100 */
@@ -562,7 +568,7 @@ img.me {
     }
 }
 
-/* ================Phone Layout ================*/ 
+/* ================ Phone Layout (  ~ 640 px )================*/ 
 @media all and (max-width:640px) {
     .logo{
         height:auto;
