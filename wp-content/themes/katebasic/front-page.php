@@ -28,7 +28,7 @@
     <!-- Start Column 1 -->
     <div class="col-33"><div class="inner">
         <h1>About Kate</h1>
-        <?php while(have_posts()): the_post();?>
+        <?php while(have_posts()): the_post(); //loop one ?>
         <?php the_content()?>
         <?php endwhile; ?>         
     </div></div>
@@ -40,7 +40,7 @@
         <?php rewind_posts(); //stops the previous loop ?>
         <?php query_posts('showposts=5&cat=5')?>
         <ul>
-        <?php while(have_posts()): the_post();?>
+        <?php while(have_posts()): the_post(); // loop two ?>
             <li><a href="<?php the_permalink() ?>"><?php the_title()?></a></li>
         <?php endwhile; ?>
         </ul>

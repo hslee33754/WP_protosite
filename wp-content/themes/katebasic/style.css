@@ -291,11 +291,32 @@ article .inner{
     border-right:1px dashed #999; 
 }
 
+article.excerpt{
+    overflow: hidden;
+    margin-bottom: 1em;
+    1px dashed #999; 
+}
+
 .pageid {
     background-color: #E45F56;
     color: #fff;
     font-family: 'Nothing You Could Do', cursive;
 }
+
+#contents img.wp-post-image {}
+
+#contents img.attachment-thumbnail{
+    box-sizing: border-box;
+    float: left;
+    margin: 0 1em 0 0;
+    
+}
+
+#contents img.attachment-medium{}
+
+#contents img.attachment-large{}
+
+#contents img.attachment-full{}
 
 /* =============================== CLEARFLOAT =============================== */
 

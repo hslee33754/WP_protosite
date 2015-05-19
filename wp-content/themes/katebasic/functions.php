@@ -14,7 +14,8 @@ register_nav_menus(array(
 ));
 //
 
-
+//Enable Featured Images & Post Thumbnails
+add_theme_support('post-thumbnails');
 
 
 
