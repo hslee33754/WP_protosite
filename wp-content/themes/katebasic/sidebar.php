@@ -33,6 +33,20 @@
 
     <!-- Start inner div --> 
     <div class="inner">
+        
+        <!-- Start Quote -->
+        <div class="widget">
+        <?php if(get_post_meta($post->ID, 'Quote', true)) : ?>
+        <block><?php echo get_post_meta($post->ID, 'Quote', true); ?>
+        </block>
+        <?php endif ?>
+        </div>
+        <!-- End Quote-->
+        
+        <!--Begin Dynamic Sidebar-->
+        <?php dynamic_sidebar();?>
+        <!-- End Dynamic Sidebar -->
+        
     </div>
     <!-- End inner div --> 
 

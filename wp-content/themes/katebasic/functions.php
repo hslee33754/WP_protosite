@@ -17,6 +17,13 @@ register_nav_menus(array(
 //Enable Featured Images & Post Thumbnails
 add_theme_support('post-thumbnails');
 
-
+//Register Sidebars
+register_sidebar(array(
+    'before_title' =>'<h2>',
+    'after_title' =>'</h2>',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</div>',
+));
+//
 
 ?>
