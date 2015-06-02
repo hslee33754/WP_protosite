@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <head>
+<!-- Start Title Tag -->
+
+<title> <?php get_my_title_tag(); ?></title> 
+
+  
+<!-- Start Meta Tag -->
+<meta name ="description" content="<?php the_excerpt(); ?>" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width" />
+<!-- End Meta Tag -->
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/js/jquery.flexslider.js"></script>
@@ -13,7 +22,6 @@
  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/css/flexslider.css" media="screen" />
  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url');?>" />
 
-<title><?php bloginfo('description');?> | <?php bloginfo('name');?> </title>
 
 <!--Start WP Head -->
 <?php wp_head(); ?>
